@@ -1,0 +1,54 @@
+
+/*添加或覆盖表格中的样式*/
+.lsp .ant-modal-body {
+  padding-top: 0;
+}
+.odd {
+  background: #f7f8f9;
+}
+.even {
+
+}
+.even, .odd {
+  color: #999;
+}
+.ant-table-body {
+  overflow-x: scroll;
+  /* padding: 16px 6px; */
+}
+.ant-table-tbody > tr.ant-table-row-hover > td,
+.ant-table-tbody > tr:hover > td {
+    background: #fff !important;
+}
+.ant-table-thead,
+.ant-table-thead > tr.ant-table-row-hover > td,
+.ant-table-thead > tr:hover > td,
+.ant-table-small .ant-table-thead > tr > th,
+.ant-table-small .ant-table-thead > tr > td {
+  background: #eceff1 !important;
+}
+.ant-table-thead > tr > th {
+  font-weigth: bold !important;
+  color: #999 !important;
+}
+.ant-table-thead th span, .ant-table-thead td span {
+  min-width: 120px;
+  display: inline-block;
+}
+.ant-table-body tr:last-child {
+  background-color: #e3e8ec;
+}
+.ant-table-small .ant-table-title,
+.ant-table-small .ant-table-footer,
+.ant-table-small .ant-table-thead > tr > th {
+  padding: 6px 8px !important;
+}
+/*
+.ant-table,
+.ant-table-small,
+.ant-table-bordered,
+.ant-table-scroll-position-left {
+  border: 0 none !important;
+  border-radius: 0 !important;
+}
+*/

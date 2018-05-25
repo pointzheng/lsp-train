@@ -1,0 +1,45 @@
+
+/**
+ * 覆盖或设定每个显示块的相关样式
+ * @type {[type]}
+ */
+.chartWrapper {
+  border: 1px solid #ccc;
+  margin: 8px;
+  height: 260px;
+  box-sizing: content-box;
+}
+.chartWrapper .header {
+  text-align: right;
+  margin: 6px 8px;
+  line-height: 18px;
+}
+.chartWrapper .ant-table-small .ant-table-tbody > tr > td {
+  padding: 2px;
+}
+.chartWrapper .ant-pagination-item,
+.chartWrapper .ant-pagination-prev,
+.chartWrapper .ant-pagination-next,
+.chartWrapper .ant-pagination-jump-prev,
+.chartWrapper .ant-pagination-jump-next {
+  width: 20px;
+  height: 22px;
+  line-height: 22px;
+  margin-right: 3px;
+  min-width: auto;
+}
+.chartWrapper .ant-pagination-disabled a,
+.chartWrapper .ant-pagination-disabled:hover a,
+.chartWrapper .ant-pagination-disabled:focus a,
+.chartWrapper .ant-pagination-prev a,
+.chartWrapper .ant-pagination-next a,
+.chartWrapper .ant-pagination-disabled .ant-pagination-item-link,
+.chartWrapper .ant-pagination-disabled:hover .ant-pagination-item-link,
+.chartWrapper .ant-pagination-disabled:focus .ant-pagination-item-link {
+  height: 22px;
+  line-height: 22px;
+}
+/*表格组件外层父组件div的样式*/
+.chartWrapper .ant-table-body {
+  overflow-x: scroll;
+}

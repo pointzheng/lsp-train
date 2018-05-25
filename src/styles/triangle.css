@@ -1,0 +1,9 @@
+*{padding: 0px;margin: 0px;}
+ul.triangle{ overflow: hidden; margin: 0 auto;}
+ul.triangle li { margin-left:-35px; float:left; list-style-type: none; height:40px; font:16px/40px microsoft yahei; color:#fff; }
+ul.triangle li span{ border:20px solid transparent; border-left:15px solid #fff; float: right; position: relative; }
+ul.triangle li em{ border:20px solid transparent; border-left:15px solid #00a0e9; float: right; position: absolute; top:-20px; left:-15px; z-index: 1;}
+ul.triangle li a{color:#fff; text-decoration: none; padding:0 15px 0 40px; background: #00a0e9; height:40px; display: block; float: left}
+ul.triangle li:hover a{background: #00a0e9;float: left; color:#fff;}
+ul.triangle li:hover em{border-left-color:#00a0e9 }
+ul.triangle li strong{ display: block;border:20px solid transparent; border-left:15px solid #fff;height:0px; float: left; margin-left:-5px;}

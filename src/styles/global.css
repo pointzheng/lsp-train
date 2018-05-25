@@ -1,0 +1,200 @@
+#root{
+  /*width: 1000px;*/
+  /*margin: 0 auto;*/
+  /*padding: 20px 0;*/
+  padding: 20px 8px;
+}
+
+/*所有的开发页面，均使用统一的命名空间lsp！*/
+.lsp {
+
+}
+.lsp .clearFix:after {
+	clear: both;
+	content: " ";
+	display: block;
+	height: 0;
+}
+.lsp .left {
+  float: left;
+}
+.lsp .right {
+  float: right;
+}
+.lsp .clearFix {
+	zoom: 1;
+}
+.lsp .txtRight {
+  text-align: right;
+}
+.lsp .star {
+  color: red;
+  margin: 0 3px 0 5px;
+}
+.lsp .txtCenter {
+  text-align: center;
+}
+.lsp .op-link+.op-link {
+  margin-left: 5px;
+}
+.lsp .button-box { /*表格右上方的操作区域，即：包含操作按钮的区域*/
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.lsp .addFieldRight {
+  text-align: right;
+  padding-right: 30px;
+}
+
+.lsp .field-button {
+  margin-top: 20px;
+}
+.lsp .tableWrapper {
+  margin: 25px 0 0;
+}
+.lsp .hide {
+  display: none;
+}
+.lsp .op-button+.op-button {
+  margin-left: 10px;
+}
+.lsp .ant-advanced-search-form {
+  padding: 8px;
+  background: #fbfbfb;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+.lsp .events+.events {
+	padding-left: 5px;
+}
+.lsp .searchform-button {
+  width: 90px;
+  height: 30px;
+  /*margin-right: 44px;*/
+}
+
+.lsp .resetform-button {
+  width: 90px;
+  height: 30px;
+  margin-right: 20px;
+  /*margin-right: 44px;*/
+}
+
+.lsp .eventsButton+.eventsButton {
+  margin-right: 10px;
+}
+.lsp .modal .ant-row.ant-form-item {
+  margin-bottom: 0;
+}
+.lsp .modal{
+  overflow: hidden;
+}
+.lsp .modal .ant-col-12 {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.lsp .modal .ant-row:nth-child(1) .ant-col-12:nth-child(1) {
+  border-top: 1px solid #ccc;
+}
+.lsp .modal .ant-row:nth-child(1) .ant-col-12:nth-child(2) {
+  border-top: 1px solid #ccc;
+}
+.lsp .modal .ant-col-24{
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.lsp .ant-modal-content .ant-modal-header,
+.lsp .ant-modal-content .ant-modal-footer {
+  border-bottom: none;
+  border-top: none;
+}
+.lsp .ant-form.modal{
+  border-left: 1px solid #ccc;
+}
+.lsp .ant-modal-content .ant-form-item-label {
+  font-weight: 600;
+}
+.lsp .modal-button-box {
+  width: 150px;
+  margin: 0 auto;
+}
+.lsp .ant-advanced-search-form .ant-form-item {
+    margin-bottom: 8px;
+}
+.lsp .modal .ant-col-12-none {
+    border: 0 none;
+}
+.lsp .ant-modal-footer {
+  text-align: center;
+}
+.lsp .ant-modal-body {
+  padding: 5px 25px;
+}
+.lsp .ant-modal-content {
+  padding: 20px 0;
+}
+.lsp .detail-modal-noline .ant-form-item {
+  margin-bottom: 12px;
+}
+.lsp .ant-table-thead th{
+  padding: 10px 8px;
+  text-align: center;
+}
+.lsp .ant-form-item{
+  margin-bottom: 10px;
+}
+.lsp .ant-form-item.ant-form-item-with-help{
+  margin-bottom: 2px;
+}
+/*.lsp .ant-confirm .ant-confirm-btns {
+  float: none;
+  text-align: center;
+}*/
+
+/**
+ * 备用的表格样式
+ */
+.lsp .detail-table {
+	width: 100%;
+	color: #666;
+	text-align: center;
+	border-collapse: collapse;
+	line-height: 26px;
+}
+.lsp .detail-table th {
+	background-color: #E7EAF5;
+	font-weight: bold;
+}
+.lsp .detail-table th, .lsp .detail-table td {
+	border: 1px solid #D9D9D9;
+	text-align: center !important;
+}
+
+.lsp .button-box .events-button+.events-button{
+  margin-left: 10px;
+}
+.lsp .hide{
+  display: hidden;
+}
+.lsp .ant-advanced-search-form .ant-select{
+  margin-top: 2px;
+}
+.lsp .ant-modal-content{
+  padding: 10px 0;
+}
+.lsp .ant-table-body .ant-form-item{
+  margin-bottom: 0;
+}
+.lsp .ant-pagination-options-size-changer.ant-select{
+  width: 80px;
+}
+
+.lsp .navTips {
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.lsp .required-sign {
+  color: #f04134;
+}

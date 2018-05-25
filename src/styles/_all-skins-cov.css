@@ -1,0 +1,95 @@
+/*对AdminLte的_all-skins重定义*/
+
+.skin-blue .main-header .navbar {
+    background-color: #03a9f3;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #00a3e5;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #222d32;
+}
+
+.skin-blue .main-header .navbar .nav > li > a:hover,
+.skin-blue .main-header .navbar .nav > li > a:active,
+.skin-blue .main-header .navbar .nav > li > a:focus,
+.skin-blue .main-header .navbar .nav .open > a,
+.skin-blue .main-header .navbar .nav .open > a:hover,
+.skin-blue .main-header .navbar .nav .open > a:focus,
+.skin-blue .main-header .navbar .nav > .active > a {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f6f6f6;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    color: #f6f6f6;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.skin-blue .main-header .logo:hover {
+    background-color: #00a3e5
+}
+
+.skin-blue-light .main-header .logo:hover {
+    background-color: #00a3e5
+}
+
+.skin-blue-light .main-header .navbar .sidebar-toggle:hover {
+    color: #f6f6f6;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.skin-blue-light .main-header .navbar {
+    background-color: #03a9f3;
+}
+
+.skin-blue-light .main-header .logo {
+    background-color: #00a3e5;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-blue-light .main-header .navbar .nav > li > a:hover,
+.skin-blue-light .main-header .navbar .nav > li > a:active,
+.skin-blue-light .main-header .navbar .nav > li > a:focus,
+.skin-blue-light .main-header .navbar .nav .open > a,
+.skin-blue-light .main-header .navbar .nav .open > a:hover,
+.skin-blue-light .main-header .navbar .nav .open > a:focus,
+.skin-blue-light .main-header .navbar .nav > .active > a {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f6f6f6;
+}
+
+.skin-green-light .main-header .logo:hover {
+    background-color: #00a65a
+}
+
+.skin-green-light .main-header .navbar .sidebar-toggle:hover {
+    color: #f6f6f6;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.skin-green-light .main-header .navbar {
+    background-color: #00a65a;
+}
+
+.skin-green-light .main-header .logo {
+    background-color: #00a65a;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-green-light .main-header .navbar .nav > li > a:hover,
+.skin-green-light .main-header .navbar .nav > li > a:active,
+.skin-green-light .main-header .navbar .nav > li > a:focus,
+.skin-green-light .main-header .navbar .nav .open > a,
+.skin-green-light .main-header .navbar .nav .open > a:hover,
+.skin-green-light .main-header .navbar .nav .open > a:focus,
+.skin-green-light .main-header .navbar .nav > .active > a {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f6f6f6;
+}

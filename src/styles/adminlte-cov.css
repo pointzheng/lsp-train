@@ -1,0 +1,102 @@
+/*对AdminLte的重定义*/
+
+#page-wrapper {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 100%;
+    font-size: 13px;
+    color: #676a6c;
+    overflow-x: hidden;
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    position: inherit;
+    width: 100%;
+}
+
+.wrapper {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-content .wrapper {
+    padding-right: 0;
+    z-index: 1
+}
+
+.content-wrapper, .right-side {
+    min-height: 100%;
+    background-color: #ecf0f5;
+    z-index: 800;
+    height: calc(100% - 140px);
+}
+
+.nav-tabs-custom {
+    margin-bottom: 0;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+    border-top-color: #03a9f3;
+    font-weight: 600;
+}
+
+.nav-tabs-custom > .nav-tabs {
+    background: #fbfbfb;
+    height: 35px;
+    font-size: 13px;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 6px 15px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+    z-index: 5;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.dropdown-menu > li > a:hover {
+    background: #03a9f3;
+    color: #fff;
+}
+
+.navbar-custom-menu .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 23px;
+}
+
+.main-header .sidebar-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    padding: 17px 17px;
+    font-family: fontAwesome;
+}
+
+.main-header .logo {
+    height: 53px;
+}
+
+.main-footer {
+    padding: 8px;
+}
+
+.table-style {
+    word-break: break-all;
+    white-space: nowrap;
+}
+
+.help-block {
+    display: inline;
+    margin-left: 15px;
+}
