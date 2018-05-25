@@ -1,7 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
+import 'babel-polyfill';
 import { Draggable, Droppable } from 'react-drag-and-drop'
 
+// 其他的拖拽插件：https://github.com/atlassian/react-beautiful-dnd
+//　更稳定版本：https://react-dnd.github.io/react-dnd/
 class App extends React.Component {
     render() {
       return (
