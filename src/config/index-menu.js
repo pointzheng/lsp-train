@@ -34,10 +34,10 @@ export const menuConfig = [{
     }]
 }, {
     "big-data-analysis": [{
-        menuName: "数据采集管理",
+        menuName: "培训管理",
         menuList: [{
-            name: "上传文件管理",
-            url: "./pages/upload-file.html"
+            name: "article管理",
+            url: "./pages/article.html"
         }, {
             name: "租客映射模板管理",
             url: "./pages/tenant-template.html"
