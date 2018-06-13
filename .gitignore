@@ -1,0 +1,26 @@
+###############################
+# 前端相关的git ingrore配置
+# @author     zhengyy
+# @copyright  CALIS
+###############################
+
+# 依赖的包文件
+/node_modules/
+
+# webpack打包目录
+/dist/
+
+# 单元测试生成的覆盖率相关目录
+/coverage*/
+/Chrome*/
+/Firefox*/
+/PhantomJS*/
+
+# lock文件
+package-lock.json
+yarn.lock
+
+# ide相关文件 以及MacOs系统相关文件
+.idea/
+.idea*
+*.DS_Store
