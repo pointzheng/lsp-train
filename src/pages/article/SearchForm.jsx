@@ -1,0 +1,100 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Form, Row, Col, Input, Button, Icon, Select, Modal } from 'antd';
+
+const FormItem = Form.Item;
+const Option = Select.Option;
+const formItemLayout = {
+  labelCol: { span: 5 },
+  wrapperCol: { span: 19 }
+};
+
+/**
+ * 表单检索
+ */
+class SearchForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      appList: []
+    };
+  }
+
+  handleSearch = (e) => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      let cons = Object.assign({}, values);
+      const selectArr = ["tenant", "datafileType", "resourceType", "status"];
+
+      selectArr.forEach(one => {
+        if (cons[one] === this.props.selectDefault) {
+          delete cons[one];
+        }
+      });
+      this.props.onSearch(cons);
+    });
+  }
+
+  handleReset = () => {
+    this.props.form.resetFields();
+  }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    const formStyle = {
+      padding: "24px",
+      background: "#fbfbfb",
+      border: "1px solid #d9d9d9",
+      borderRadius: "6px"
+    };
+    const {getFieldDecorator} = this.props.form;
+    const selectDefault = this.props.selectDefault;
+
+    return (
+      <Form
+        style={formStyle}
+        onSubmit={this.handleSearch}
+      >
+        <Row gutter={40}>
+          <Col span={8}>
+            <FormItem {...formItemLayout} label="选择APP">
+              {getFieldDecorator("tenant", {
+                initialValue: selectDefault
+              })(
+              <Select placeholder="请选择">
+                <Option value={selectDefault}>请选择</Option>
+                {
+                  this.props.appList.map((ele, idx) => <Option key={idx} value={ele.id}>{ele.tenant.tenant_name_cn}</Option>)
+                }
+              </Select>
+              )}
+            </FormItem>
+          </Col>
+          <Col span={8}>
+            <FormItem {...formItemLayout} label="角色名称">
+              {
+                getFieldDecorator("resourceType", {
+                  initialValue: ""
+                })(
+                  <Input />
+                )
+              }
+            </FormItem>
+          </Col>
+        </Row>
+        <Row>
+          <Col span={24} style={{textAlign: 'right'}}>
+            <Button style={{marginRight: "15px"}} onClick={this.handleReset}>重置</Button>
+            <Button type="primary" htmlType="submit">查询</Button>
+          </Col>
+        </Row>
+      </Form>
+    );
+  }
+}
+
+export default (Form.create()(SearchForm));
