@@ -14,7 +14,6 @@ function buildHtmlPlugins() {
   var htmlPlugins = [
       new ExtractTextPlugin('css/[name].css'),
       new HotModuleReplacementPlugin(),
-      new CopyWebpackPlugin([{from: __dirname + '/src/plugins/ckeditor', to: './plugins/ckeditor'}])
   ];
 
   // 加入index和login页面的相应文件
@@ -30,7 +29,7 @@ function buildHtmlPlugins() {
   var indexHtml = Object.assign({
     filename: './index.html',
     template: './src/index.html',
-    chunks: ['vendors', 'index']
+    chunks: ['index']
   }, commonInfo);
   htmlPlugins.push(new HtmlWebpackPlugin(indexHtml));
 
@@ -61,7 +60,7 @@ function buildHtmlPlugins() {
           },
           favicon: './src/imgs/favicon.ico',
           inject: true,
-          chunks: ['vendors', pagename],
+          chunks: [pagename],
           hash: true
       };
       htmlPlugins.push(new HtmlWebpackPlugin(conf));
@@ -78,7 +77,7 @@ function buildEntries() {
   var _entries = getEntry('js', 'src/pages/');
   _entries['login'] = './src/pages/login/login.js';
   _entries['index'] = './src/index.js';
-  _entries['vendors']= "./src/plugins/jquery-custom/jquery-custom.js";
+  
 
   return _entries;
 }
