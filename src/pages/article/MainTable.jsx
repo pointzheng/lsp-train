@@ -130,27 +130,27 @@ export default class MainTable extends React.Component {
 
   render() {
     const columns = [{
-      title: 'APP名称',
-      dataIndex: '',
-      key: '',
+      title: '标题',
+      dataIndex: 'article_title',
+      key: 'article_title',
       defaultSortOrder: 'descend',
       sorter: (a, b) => {console.log("sort."); return a - b}
     }, {
-      title: '角色名称',
-      dataIndex: '',
-      key: ''
+      title: '内容',
+      dataIndex: 'article_content',
+      key: 'article_content'
     }, {
       title: '描述',
-      dataIndex: '',
-      key: ''
+      dataIndex: 'article_desc',
+      key: 'article_desc'
     }, {
       title: '创建日期',
-      dataIndex: '',
-      key: ''
+      dataIndex: 'create_time',
+      key: 'create_time'
     }, {
-      title: '最近修改日期',
-      dataIndex: '',
-      key: ''
+      title: '创建者',
+      dataIndex: 'creator',
+      key: 'creator'
     }, {
       title: '操作',
       key: 'action',

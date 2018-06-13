@@ -14,6 +14,19 @@ const SELECT_DEFAULT = "NONE";
  * 示例模块
  * @author zhengyy
  * @copyright CALIS管理中心
+ *
+ * 维护的实体属性：
+    "id",
+    "article_title",
+    "article_desc",
+    "article_content",
+    "read_count",
+    "creator",
+    "creator_id",
+    "tenant_id",
+    "create_time",
+    "status"
+ *
  */
 class ArticleManagement extends Component {
   constructor(props) {
@@ -75,7 +88,7 @@ class ArticleManagement extends Component {
           this.state.isEdit
           ?
           <Modal
-            title={id == null ? "增加书目" : "编辑书目"}
+            title={this.state.id == null ? "增加书目" : "编辑书目"}
             width={720}
             visible={true}
             maskClosable={false}

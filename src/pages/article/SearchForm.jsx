@@ -17,7 +17,7 @@ class SearchForm extends React.Component {
     super(props);
 
     this.state = {
-    
+
     };
   }
 
@@ -60,7 +60,7 @@ class SearchForm extends React.Component {
         onSubmit={this.handleSearch}
       >
         <Row gutter={40}>
-          <Col span={8}>
+          {/* <Col span={8}>
             <FormItem {...formItemLayout} label="选择APP">
               {getFieldDecorator("tenant", {
                 initialValue: selectDefault
@@ -71,9 +71,9 @@ class SearchForm extends React.Component {
               </Select>
               )}
             </FormItem>
-          </Col>
+          </Col> */}
           <Col span={8}>
-            <FormItem {...formItemLayout} label="角色名称">
+            <FormItem {...formItemLayout} label="标题">
               {
                 getFieldDecorator("resourceType", {
                   initialValue: ""

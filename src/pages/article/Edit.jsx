@@ -22,7 +22,7 @@ class EditForm extends React.Component {
     super(props);
 
     this.state = {
-      appList: this.props.appList,     // 租客列表和资源类型列表，存储在父组件（因为SearchForm组件也需要该信息)
+      appList: [],
       editInfo: {}
     };
   }
@@ -51,10 +51,7 @@ class EditForm extends React.Component {
       editInfo = {
         app: this.props.selectDefault,
         roleName: "",
-        roleDesc: "",
-        menuInfo: { // TODO：数据结构待定，用于描述已授权的树结构
-
-        }
+        roleDesc: ""
       };
     } else {
       editInfo = {
@@ -73,7 +70,7 @@ class EditForm extends React.Component {
         <Form onSubmit={::this.doSave}>
           <FormItem
             {...formItemLayout}
-            label="选择APP"
+            label="请选择"
           >
             <div>
               {
@@ -122,12 +119,6 @@ class EditForm extends React.Component {
               )}
               <span className="star">*</span>
             </div>
-          </FormItem>
-          <FormItem
-            {...formItemLayout}
-            label="菜单授权"
-          >
-
           </FormItem>
           <Row style={{marginTop: "20px", textAlign: "center"}}>
             <Button type="primary" htmlType="submit">提交</Button>
