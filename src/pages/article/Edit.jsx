@@ -96,10 +96,10 @@ class EditForm extends React.Component {
           </FormItem>
           <FormItem
             {...formItemLayout}
-            label="角色名称"
+            label="书目标题"
           >
             <div>
-              {getFieldDecorator("modelName", {
+              {getFieldDecorator("article_title", {
                 initialValue: editInfo.modelName
               })(
                 <Input style={controlStyle} />
@@ -109,10 +109,10 @@ class EditForm extends React.Component {
           </FormItem>
           <FormItem
             {...formItemLayout}
-            label="角色描述"
+            label="书目内容"
           >
             <div>
-              {getFieldDecorator("modelName", {
+              {getFieldDecorator("article_content", {
                 initialValue: editInfo.modelName
               })(
                 <Input style={controlStyle} />
