@@ -11,8 +11,9 @@ let serverConf = util.getServerConfig();
 const SELECT_DEFAULT = "NONE";
 
 /**
- * "APP租客角色配置"模块，Management-Frontend：#9
+ * 示例模块
  * @author zhengyy
+ * @copyright CALIS管理中心
  */
 class ArticleManagement extends Component {
   constructor(props) {
@@ -53,12 +54,24 @@ class ArticleManagement extends Component {
 
   componentDidMount() {
     let thisCtx = this;
-
   }
 
   render() {
     return (
       <div>
+        <div>
+          <SearchForm
+            onSearch={::this.onFormResearch}
+            appList={this.state.appList}
+            selectDefault={SELECT_DEFAULT}
+          />
+          <MainTable
+            serverConf={serverConf}
+            searchCons={this.state.searchCons}
+            onAddOrUpdate={::this.onAddOrUpdate}
+            pageSize={10}
+          />
+        </div>
         {
           this.state.isEdit
           ?
@@ -76,26 +89,13 @@ class ArticleManagement extends Component {
               serverConf={serverConf}
               appList={this.state.appList}
               selectDefault={SELECT_DEFAULT}
-
             />
           </Modal>
           :
-          <div>
-            <SearchForm
-              onSearch={::this.onFormResearch}
-              appList={this.state.appList}
-              selectDefault={SELECT_DEFAULT}
-            />
-            <MainTable
-              serverConf={serverConf}
-              searchCons={this.state.searchCons}
-              onAddOrUpdate={::this.onAddOrUpdate}
-              pageSize={10}
-            />
-          </div>
+          null
         }
       </div>
-    );
+    )
   }
 };
 
