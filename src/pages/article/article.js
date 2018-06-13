@@ -20,9 +20,8 @@ class ArticleManagement extends Component {
     super(props);
 
     this.state = {
-      appList: [],        // 租客列表，供查询组件SearchForm、添加操作组件Edit使用
       isEdit: false,      // 是否导航到编辑页面
-      editId: null,
+      id: null,
       searchCons: {}
     }
   }
@@ -35,7 +34,7 @@ class ArticleManagement extends Component {
   }
 
   // 页面左上角导航"返回"链接
-  returnList() {
+  onCancel() {
     this.setState({isEdit: false});
   }
 
@@ -76,11 +75,11 @@ class ArticleManagement extends Component {
           this.state.isEdit
           ?
           <Modal
-            title="编辑角色"
+            title={id == null ? "增加书目" : "编辑书目"}
             width={720}
             visible={true}
             maskClosable={false}
-            onCancel={::this.returnList}
+            onCancel={::this.onCancel}
             footer={null}
           >
             <Edit

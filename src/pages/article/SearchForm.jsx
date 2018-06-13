@@ -17,7 +17,7 @@ class SearchForm extends React.Component {
     super(props);
 
     this.state = {
-      appList: []
+    
     };
   }
 
@@ -67,9 +67,7 @@ class SearchForm extends React.Component {
               })(
               <Select placeholder="请选择">
                 <Option value={selectDefault}>请选择</Option>
-                {
-                  this.props.appList.map((ele, idx) => <Option key={idx} value={ele.id}>{ele.tenant.tenant_name_cn}</Option>)
-                }
+
               </Select>
               )}
             </FormItem>
