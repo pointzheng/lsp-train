@@ -39,40 +39,6 @@ if(!util.isAnonyLogin() && !isLogin) {
  * @return {[dom]}   [返回得html节点]
  */
 function changeHtml (m,a) {
-
-  /*
-  let len = m.length;
-  let menuHtml = '';
-  for (var i = 0; i < len; i++) {
-    menuHtml = menuHtml + `<li class="treeview"> \
-        <a href="#"><i class="fa fa-link"></i><span>${m[i].menuName}</span>\
-            <span class="pull-right-container">\
-                    <i class="fa fa-angle-left pull-right"></i>\
-                </span>\
-        </a>\
-        <ul class="treeview-menu">`;
-    let listLen = m[i].menuList.length;
-    let listMenu = '';
-    for (var j = 0; j < listLen; j++) {
-      let menu = m[i].menuList[j];
-
-      // 额外属性：描述子菜单的ID（默认无ID）、是否可见（默认可见）。
-      let id = (typeof menu.id === "undefined" ? "" : menu.id);
-      let show = (typeof menu.show === "undefined" ? "1" : menu.show);
-      let idAttr = (id ? ` id=${id} ` : "");
-      let showClz = (show === "1" ? "" : 'class="hide"');
-
-      listMenu = listMenu + `<li><a href="${m[i].menuList[j].url}" class="J_menuItem">${m[i].menuList[j].name}</a></li>`
-    }
-    menuHtml = menuHtml + listMenu + '</ul></li>';
-  }
-  menuHtml = menuHtml + '</ul>';
-  let titleHtml = `<li><a class="J_menuItem menu-title ">${menuTitleConfig[a]}</a></li>`;
-  menuHtml = titleHtml + menuHtml;
-  $(".sidebar-menu").eq(a).html(menuHtml);
-  */
-
-
   let len = m.length;
   let menuHtml = '';
 
