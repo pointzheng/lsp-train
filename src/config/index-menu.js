@@ -3,10 +3,7 @@ export const menuConfig = [{
         menuName: "我的账户",
         menuList: [{
             name: "个人信息",
-            url: "./pages/user-information.html"
-        }, {
-            name: "修改密码",
-            url: "./pages/change-password.html"
+            url: "./pages/my-job.html"
         }]
     }]
 }, {
