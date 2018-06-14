@@ -41,7 +41,6 @@ class EditForm extends React.Component {
 
   handleChange(value) {
     const thisCtx = this;
-
   }
 
   componentDidMount() {
@@ -70,32 +69,6 @@ class EditForm extends React.Component {
         <Form onSubmit={::this.doSave}>
           <FormItem
             {...formItemLayout}
-            label="请选择"
-          >
-            <div>
-              {
-                this.state.appList.length > 0
-                ?
-                getFieldDecorator("tenant", {
-                  initialValue: editInfo.app
-                })(
-                  <Select style={controlStyle} onChange={this.handleChange}>
-                    <Option value={this.props.selectDefault}>请选择</Option>
-                    {
-                      this.state.appList.map(
-                        (ele, index) => <Option key={index} value={ele.id}>{ele.tenant.tenant_name_cn}</Option>
-                      )
-                    }
-                  </Select>
-                )
-                :
-                <span style={{color: "red"}}>暂无APP，请先配置!</span>
-              }
-              <span className="star">*</span>
-            </div>
-          </FormItem>
-          <FormItem
-            {...formItemLayout}
             label="书目标题"
           >
             <div>
@@ -120,7 +93,7 @@ class EditForm extends React.Component {
               <span className="star">*</span>
             </div>
           </FormItem>
-          <Row style={{marginTop: "20px", textAlign: "center"}}>
+          <Row style={{margin: "20px 0", textAlign: "center"}}>
             <Button type="primary" htmlType="submit">提交</Button>
             <Button type="primary" style={{margin: "0 15px"}} onClick={this.onOp.bind(this, "cancel")}>关闭</Button>
           </Row>
