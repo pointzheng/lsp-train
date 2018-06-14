@@ -43,7 +43,7 @@ class ArticleManagement extends Component {
    * op 区分是编辑还是增加，取值：add, ononAddOrUpdate
    */
   onAddOrUpdate(op, id) {
-    this.setState({isEdit: true, editId: id});
+    this.setState({isEdit: true, id: id});
   }
 
   // 页面左上角导航"返回"链接
@@ -96,7 +96,7 @@ class ArticleManagement extends Component {
             footer={null}
           >
             <Edit
-              id={this.state.editId}
+              id={this.state.id}
               onEditAction={::this.onEditAction}
               serverConf={serverConf}
               appList={this.state.appList}
