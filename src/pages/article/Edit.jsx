@@ -63,7 +63,10 @@ class EditForm extends React.Component {
         article_content,
         article_desc
       };
-      const reqMethod = (this.props.id === null ? "POST" : "PUT");
+      if (thisCtx.props.id !== null) {
+        entity.id = thisCtx.props.id;
+      }
+      const reqMethod = (thisCtx.props.id === null ? "POST" : "PUT");
       fetch(url, {
         method: reqMethod,
         headers: {
