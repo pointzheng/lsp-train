@@ -59,16 +59,17 @@ export default class MainTable extends React.Component {
     event.preventDefault();
     console.log(`当前操作ID：${id}`);
     if (op === "del") {
-      alert("TODO：删除!");
-      // fetch(`${this.props.serverConf.SERVICE_BASE}/mappingmodelpub/${id}?tenantIdBL=${entity.tenant}`, {
-      //   method: "DELETE",
-      //   headers: {
-      //     "x-okapi-tenant": this.props.serverConf.tenant,
-      //     "X-Okapi-Token": this.props.serverConf.token
-      //   }
-      // }).then((response) => {
-      //   util.handleResponse(response, "DELETE", () => {thisCtx.handleSearch()});
-      // })
+      const url = `${this.props.interfaceBase}/deleteArticle/${id}`;
+
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          // "x-okapi-tenant": loginInfo.tenant,
+          // "X-Okapi-Token": loginInfo.token
+        }
+      }).then((response) => {
+        util.handleResponse(response, "DELETE", () => {thisCtx.handleSearch()});
+      })
     } else if (op == "edit") {
       this.onAddOrUpdate(op, id, tenant);
     }
@@ -83,15 +84,14 @@ export default class MainTable extends React.Component {
       pageSize: this.state.pageSize,
       currentPage: this.state.currentPage
     });
-    const serverInfo = this.props.serverConf;
-    const baseUrl = `${serverInfo.serverBase}/article/findAllArticle`;
-    const url = `${baseUrl}?limit=${this.state.pageSize}&offset=${(this.state.currentPage - 1)*this.state.pageSize}`;
+    const pagerInfo = `limit=${this.state.pageSize}&offset=${(this.state.currentPage - 1)*this.state.pageSize}`;
+    const url = `${this.props.interfaceBase}/findAllArticle?${pagerInfo}`;
 
     fetch(url, {
       method: "GET",
       headers: {
-        "x-okapi-tenant": serverInfo.tenant,
-        "X-Okapi-Token": serverInfo.token
+        // "x-okapi-tenant": loginInfo.tenant,
+        // "X-Okapi-Token": loginInfo.token
       }
     }).then((response) => {
       if (response.status === 200) {

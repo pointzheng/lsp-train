@@ -7,13 +7,15 @@ import Edit from './Edit.jsx';
 import MainTable from './MainTable.jsx';
 import util from '../../util/util.js';
 
-const serverConf = util.getServerConfig();
+const conf = util.getServerConfig();
+const interfaceBase = `${conf.serverBase}/article`;
 const loginInfo = util.getLoginInfo();
 
 /**
  * 示例模块
  * @author zhengyy
  * @copyright CALIS管理中心
+ * 培训wiki文档：http://gitlab.calis.edu.cn/Business/Tenant-Frontend/wikis/front-end-dev-process
  *
  * 维护的实体属性：
     "id",
@@ -78,7 +80,7 @@ class ArticleManagement extends Component {
           />
           <MainTable
             loginInfo={loginInfo}
-            serverConf={serverConf}
+            interfaceBase={interfaceBase}
             searchCons={this.state.searchCons}
             onAddOrUpdate={::this.onAddOrUpdate}
             pageSize={10}
@@ -98,7 +100,7 @@ class ArticleManagement extends Component {
             <Edit
               id={this.state.id}
               onEditAction={::this.onEditAction}
-              serverConf={serverConf}
+              interfaceBase={interfaceBase}
               loginInfo={loginInfo}
               appList={this.state.appList}
             />

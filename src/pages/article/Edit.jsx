@@ -56,16 +56,16 @@ class EditForm extends React.Component {
         return;
       }
 
-      const path = "article";
-      const interfaze = this.props.id === null ? `${path}/saveArticle` : `${path}/updateArticle`;
-      const url = `${this.props.serverConf.serverBase}/${interfaze}`;
+      const interfaze = this.props.id === null ? `saveArticle` : `updateArticle`;
+      const url = `${this.props.interfaceBase}/${interfaze}`;
       const entity = {
         article_title,
         article_content,
         article_desc
       };
+      const reqMethod = (this.props.id === null ? "POST" : "PUT");
       fetch(url, {
-        method: (this.props.id === null ? "POST" : "PUT"),
+        method: reqMethod,
         headers: {
           // "x-okapi-tenant": this.props.serverConf.tenant,
           // "X-Okapi-Token": this.props.serverConf.token,
@@ -75,28 +75,40 @@ class EditForm extends React.Component {
       }).then((response) => {
         util.handleResponse(response, reqMethod, () => {thisCtx.onOp("ok")})
       })
-
-      // // TODO: 调用接口
-      // alert("操作成功");
-      // thisCtx.onOp("ok");
     });
   }
 
   componentDidMount() {
     var editInfo = {};
+    const id = this.props.id;
+    const thisCtx = this;
 
-    if (this.props.id === null) {
+    if (id === null) {
       editInfo = {
         article_title: "",
         article_content: "",
         article_disc: ""
       };
+      this.setState({editInfo});
     } else {
-      editInfo = {
+      const queryUrl = `${this.props.interfaceBase}/getArticleById/${id}`;
 
-      };
+      fetch(queryUrl, {
+        method: "GET",
+        headers: {
+          // "x-okapi-tenant": loginInfo.tenant,
+          // "X-Okapi-Token": loginInfo.token,
+          "Content-Type": "application/json"
+        }
+      }).then((response) => {
+        response.json().then(editInfo => {
+          console.log("编辑信息：\n", JSON.stringify(editInfo));
+
+          thisCtx.setState({editInfo});
+        })
+      })
     }
-    this.setState({editInfo})
+
   }
 
   render() {
