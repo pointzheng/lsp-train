@@ -22,7 +22,7 @@ class SearchForm extends React.Component {
     };
   }
 
-  handleSearch = (e) => {
+  handleSearch(e) {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       let cons = Object.assign({}, values);
@@ -37,12 +37,8 @@ class SearchForm extends React.Component {
     });
   }
 
-  handleReset = () => {
+  handleReset() {
     this.props.form.resetFields();
-  }
-
-  componentDidMount() {
-
   }
 
   render() {
