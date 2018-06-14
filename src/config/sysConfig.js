@@ -5,7 +5,7 @@
 
 // Okapi服务器配置
 const confProd = {
-  serverBase:   "http://222.29.81.251:9130",
+  serverBase:   "http://192.168.2.164:9001",
   tenant:       "l001736"
 };
 
