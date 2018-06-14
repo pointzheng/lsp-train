@@ -7,8 +7,8 @@ import Edit from './Edit.jsx';
 import MainTable from './MainTable.jsx';
 import util from '../../util/util.js';
 
-let serverConf = util.getServerConfig();
-const SELECT_DEFAULT = "NONE";
+const serverConf = util.getServerConfig();
+const loginInfo = util.getLoginInfo();
 
 /**
  * 示例模块
@@ -75,9 +75,9 @@ class ArticleManagement extends Component {
           <SearchForm
             onSearch={::this.onFormResearch}
             appList={this.state.appList}
-            selectDefault={SELECT_DEFAULT}
           />
           <MainTable
+            loginInfo={loginInfo}
             serverConf={serverConf}
             searchCons={this.state.searchCons}
             onAddOrUpdate={::this.onAddOrUpdate}
@@ -99,8 +99,8 @@ class ArticleManagement extends Component {
               id={this.state.id}
               onEditAction={::this.onEditAction}
               serverConf={serverConf}
+              loginInfo={loginInfo}
               appList={this.state.appList}
-              selectDefault={SELECT_DEFAULT}
             />
           </Modal>
           :

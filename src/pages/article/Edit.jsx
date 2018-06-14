@@ -23,7 +23,6 @@ class EditForm extends React.Component {
     super(props);
 
     this.state = {
-      appList: [],
       editInfo: {}
     };
   }
@@ -64,9 +63,9 @@ class EditForm extends React.Component {
 
     if (this.props.id === null) {
       editInfo = {
-        app: this.props.selectDefault,
-        roleName: "",
-        roleDesc: ""
+        article_title: "",
+        article_content: "",
+        article_disc: ""
       };
     } else {
       editInfo = {
