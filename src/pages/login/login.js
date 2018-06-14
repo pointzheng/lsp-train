@@ -119,9 +119,6 @@ class Login extends Component {
               <input required="required" name="username" value={this.state.loginInfor.username} onChange={this.handleChange} placeholder="请输入用户名" className="input user-name"/>
               <input name="password" value={this.state.loginInfor.password} onChange={this.handleChange} type="password" placeholder="请输入密码" className="input user-password"/>
               <button type="button" className="btn" onClick={this.login}></button>
-              <p className="right-text">
-                <a href="###">忘记密码</a>
-              </p>
             </div>
           </div>
         </div>
