@@ -62,11 +62,19 @@ const util = {
    * 获取服务器配置信息：服务基地址、馆名称（英文和中文）、用户名等
    */
   getServerConfig() {
-    return Object.assign({}, confProd, {
+    return confProd
+  },
+
+  /**
+   * 获取当前登录信息
+   * @return 当前登录用户信息，对象类型，包括userId、tocken等属性
+   */
+  getLoginInfo() {
+    return {
       userId: sessionStorage.getItem("userId"),
       currentAdmin: sessionStorage.getItem("username"),
       token: sessionStorage.getItem("token")
-    })
+    }
   }
 }
 
