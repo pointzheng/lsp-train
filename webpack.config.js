@@ -38,12 +38,12 @@ var config = {
     },
     resolve: {
         alias: {
-            'react': path.join(__dirname, 'node_modules', 'react','dist','react.min.js'),
-            'react-dom': path.join(__dirname, 'node_modules', 'react-dom','dist','react-dom.min.js'),
-            'jquery': path.join(__dirname, 'node_modules', 'jquery','dist','jquery.min.js'),
-            'jquery-custom': path.join(__dirname, 'src', 'plugins','jquery-custom','jquery-custom.js'),
-            'react-bootstrap': path.join(__dirname, 'node_modules', 'react-bootstrap','dist','react-bootstrap.min.js'),
-            'babel-polyfill': path.join(__dirname, 'node_modules', 'babel-polyfill','dist','polyfill.min.js'),
+            // 'react': path.join(__dirname, 'node_modules', 'react','dist','react.min.js'),
+            // 'react-dom': path.join(__dirname, 'node_modules', 'react-dom','dist','react-dom.min.js'),
+            // 'jquery': path.join(__dirname, 'node_modules', 'jquery','dist','jquery.min.js'),
+            // 'jquery-custom': path.join(__dirname, 'src', 'plugins','jquery-custom','jquery-custom.js'),
+            // 'react-bootstrap': path.join(__dirname, 'node_modules', 'react-bootstrap','dist','react-bootstrap.min.js'),
+            // 'babel-polyfill': path.join(__dirname, 'node_modules', 'babel-polyfill','dist','polyfill.min.js'),
             'bfd': path.join(__dirname, 'node_modules', 'bfd-ui', 'lib')
         }
     },
