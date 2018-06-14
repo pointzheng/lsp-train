@@ -27,20 +27,26 @@ class EditForm extends React.Component {
     };
   }
 
+  /**
+   * 点击"提交"或"取消后的操作"
+   * @param  {[type]} op [description]
+   * @return {[type]}    [description]
+   */
   onOp(op) {
     if (op === "ok" || op === "cancel") {
       this.props.onEditAction(op);
-    } else if (op === "preview") { // 暂时未开发"预览功能"，分支保留
-
     }
   }
 
   doSave(event) {
     event.preventDefault();
-  }
 
-  handleChange(value) {
     const thisCtx = this;
+    this.props.form.validateFields((err, values) => {
+      // TODO: 调用接口
+      alert("操作成功");
+      thisCtx.onOp("ok");
+    });
   }
 
   componentDidMount() {
@@ -69,11 +75,11 @@ class EditForm extends React.Component {
         <Form onSubmit={::this.doSave}>
           <FormItem
             {...formItemLayout}
-            label="书目标题"
+            label="标题"
           >
             <div>
               {getFieldDecorator("article_title", {
-                initialValue: editInfo.modelName
+                initialValue: editInfo.article_title
               })(
                 <Input style={controlStyle} />
               )}
@@ -82,15 +88,27 @@ class EditForm extends React.Component {
           </FormItem>
           <FormItem
             {...formItemLayout}
-            label="书目内容"
+            label="内容"
           >
             <div>
               {getFieldDecorator("article_content", {
-                initialValue: editInfo.modelName
+                initialValue: editInfo.article_content
               })(
                 <Input style={controlStyle} />
               )}
               <span className="star">*</span>
+            </div>
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label="描述"
+          >
+            <div>
+              {getFieldDecorator("article_desc", {
+                initialValue: editInfo.article_desc
+              })(
+                <Input style={controlStyle} />
+              )}
             </div>
           </FormItem>
           <Row style={{margin: "20px 0", textAlign: "center"}}>
