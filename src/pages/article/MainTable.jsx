@@ -132,9 +132,7 @@ export default class MainTable extends React.Component {
     const columns = [{
       title: '标题',
       dataIndex: 'article_title',
-      key: 'article_title',
-      defaultSortOrder: 'descend',
-      sorter: (a, b) => {console.log("sort."); return a - b}
+      key: 'article_title'
     }, {
       title: '内容',
       dataIndex: 'article_content',
