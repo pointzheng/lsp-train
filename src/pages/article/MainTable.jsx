@@ -21,9 +21,9 @@ export default class MainTable extends React.Component {
   /**
    *
    * 表格进行分页、排序、筛选时触发
-   * @param  {[type]} pagination 分页信息
-   * @param  {[type]} filters    [description]，当前尚未用到filters和sorters
-   * @param  {[type]} sorter     排序信息
+   * @param  pagination 分页信息
+   * @param  filters    [description]，当前尚未用到filters和sorters
+   * @param  sorter     排序信息
    */
   onTableChange (pagination, filters, sorter) {
     console.log('table changed, parameters:', pagination, filters, sorter);
@@ -37,8 +37,8 @@ export default class MainTable extends React.Component {
 
   /**
    * 分页区页码改变后的回调
-   * @param  {[type]} page     当前页码
-   * @param  {[type]} pageSize 每页记录数
+   * @param  page     当前页码
+   * @param  pageSize 每页记录数
    * @return
    */
   onPageNumberChange(pageNum, pageSize) {
@@ -84,10 +84,9 @@ export default class MainTable extends React.Component {
       currentPage: this.state.currentPage
     });
     const serverInfo = this.props.serverConf;
-    const baseUrl = `${serverInfo.SERVICE_BASE}/mappingmodelpub`;
-    const url = `${baseUrl}?limit=${this.state.pageSize}&offset=${(this.state.currentPage - 1)*this.state.pageSize}&tenantIdBL=${queryCons.tenant}`;
+    const baseUrl = `${serverInfo.serverBase}/article/findAllArticle`;
+    const url = `${baseUrl}?limit=${this.state.pageSize}&offset=${(this.state.currentPage - 1)*this.state.pageSize}`;
 
-    /*
     fetch(url, {
       method: "GET",
       headers: {
@@ -98,19 +97,18 @@ export default class MainTable extends React.Component {
       if (response.status === 200) {
         response.json().then((json) => {
           thisCtx.setState({
-            data: json.mappingmodels,
-            total: json.total_records
+            data: json,
+            total: json.length
           });
         });
       } else if (response.status === 404) {
-        console.log("返回数据：错误")
+        console.log("404：无数据")
         thisCtx.setState({
           data: [],
           total: 0
         });
       }
     })
-    */
   }
 
   componentWillReceiveProps(nextProp) {

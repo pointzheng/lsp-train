@@ -43,18 +43,42 @@ class EditForm extends React.Component {
 
     const thisCtx = this;
     this.props.form.validateFields((err, values) => {
-      if ($.trim(values.article_title) === "") {
+      const article_title = values.article_title;
+      const article_content = values.article_content;
+      const article_desc = values.article_desc;
+
+      if ($.trim(article_title) === "") {
         alert("标题不能为空!");
         return;
       }
-      if ($.trim(values.article_content) === "") {
+      if ($.trim(article_content) === "") {
         alert("内容不能为空!");
         return;
       }
 
-      // TODO: 调用接口
-      alert("操作成功");
-      thisCtx.onOp("ok");
+      const path = "article";
+      const interfaze = this.props.id === null ? `${path}/saveArticle` : `${path}/updateArticle`;
+      const url = `${this.props.serverConf.serverBase}/${interfaze}`;
+      const entity = {
+        article_title,
+        article_content,
+        article_desc
+      };
+      fetch(url, {
+        method: (this.props.id === null ? "POST" : "PUT"),
+        headers: {
+          // "x-okapi-tenant": this.props.serverConf.tenant,
+          // "X-Okapi-Token": this.props.serverConf.token,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entity)
+      }).then((response) => {
+        util.handleResponse(response, reqMethod, () => {thisCtx.onOp("ok")})
+      })
+
+      // // TODO: 调用接口
+      // alert("操作成功");
+      // thisCtx.onOp("ok");
     });
   }
 
