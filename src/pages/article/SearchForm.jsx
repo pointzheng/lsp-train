@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Row, Col, Input, Button, Icon, Select, Modal } from 'antd';
+import $ from 'jquery';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -25,13 +26,13 @@ class SearchForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       let cons = Object.assign({}, values);
-      const selectArr = ["tenant", "datafileType", "resourceType", "status"];
 
-      selectArr.forEach(one => {
-        if (cons[one] === this.props.selectDefault) {
-          delete cons[one];
+      for (let p in cons) {
+        if ($.trim(cons[p]) === "") {
+          delete cons[p];
         }
-      });
+      }
+
       this.props.onSearch(cons);
     });
   }
@@ -60,22 +61,10 @@ class SearchForm extends React.Component {
         onSubmit={this.handleSearch}
       >
         <Row gutter={40}>
-          {/* <Col span={8}>
-            <FormItem {...formItemLayout} label="选择APP">
-              {getFieldDecorator("tenant", {
-                initialValue: selectDefault
-              })(
-              <Select placeholder="请选择">
-                <Option value={selectDefault}>请选择</Option>
-
-              </Select>
-              )}
-            </FormItem>
-          </Col> */}
           <Col span={8}>
             <FormItem {...formItemLayout} label="标题">
               {
-                getFieldDecorator("resourceType", {
+                getFieldDecorator("article_title", {
                   initialValue: ""
                 })(
                   <Input />
