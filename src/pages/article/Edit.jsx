@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Form, Input, Select, Row, Col, Button} from 'antd';
 import util from '../../util/util.js';
+import $ from 'jquery';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -43,6 +44,15 @@ class EditForm extends React.Component {
 
     const thisCtx = this;
     this.props.form.validateFields((err, values) => {
+      if ($.trim(values.article_title) === "") {
+        alert("标题不能为空!");
+        return;
+      }
+      if ($.trim(values.article_content) === "") {
+        alert("内容不能为空!");
+        return;
+      }
+
       // TODO: 调用接口
       alert("操作成功");
       thisCtx.onOp("ok");
