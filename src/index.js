@@ -19,15 +19,12 @@ require('./styles/index-style.css');
 import { menuConfig , menuTitleConfig } from "./config/index-menu.js";
 import util from './util/util.js';
 
-/**
- * [暂时使用sessionStorage模拟登陆效果，接口完善后，正常调用接口实现登陆并获取tooken]
- * @type {[function]}
- */
+
 let sessionIsLogin = sessionStorage.getItem("isLogin");
 let isLogin = (sessionIsLogin == "" || sessionIsLogin == undefined || sessionIsLogin == null)? false:sessionIsLogin;
 
 console.log("util is,", util)
-if(!util.isAnonyLogin() && !isLogin) {
+if(!isLogin) {
   window.location.href="pages/login.html";
 }
 
