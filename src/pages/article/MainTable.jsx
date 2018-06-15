@@ -146,8 +146,8 @@ export default class MainTable extends React.Component {
       minute = dateStr.substring(10, 12);
       second = dateStr.substring(12, 14);
     } catch (ex) {
-        console.error("处理时间错误!");
-        return "";
+      console.error("处理时间错误!");
+      return "";
     }
 
     return `${year}-${month}-${day} ${hour}:${minute}:${second}`
