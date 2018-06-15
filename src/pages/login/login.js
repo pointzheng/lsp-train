@@ -5,12 +5,9 @@ import "./login.css";
 import logo from '../../imgs/login_logo.jpg';
 
 // 实际使用时，从配置信息获取
-const SERVER_CONF = {
-  SERVICE_BASE: "http://222.29.81.251:9130",
-  tenant: "l001736",
-  userId: sessionStorage.getItem("userId"),
-  currentAdmin: sessionStorage.getItem("username"),
-  token: sessionStorage.getItem("token")
+const conf = {
+  serverBase: "http://222.29.81.251:9130",
+  tenant: "l001736"
 };
 
 class Login extends Component {
@@ -29,7 +26,6 @@ class Login extends Component {
 
   login() {
     let loginInfo = this.state.loginInfor;
-    let _this = this;
     var flag = true;
 
     if (!loginInfo.username) {
@@ -41,10 +37,10 @@ class Login extends Component {
       return;
     }
     if (flag) {
-      fetch(`${SERVER_CONF.SERVICE_BASE}/bl-users/login`, {
+      fetch(`${conf.serverBase}/bl-users/login`, {
         method: 'POST',
         headers: {
-          'X-Okapi-Tenant': SERVER_CONF.tenant,
+          'X-Okapi-Tenant': conf.tenant,
           'Content-type': "application/json"
         },
         body: JSON.stringify(loginInfo)
@@ -53,12 +49,13 @@ class Login extends Component {
           alert('登陆失败，请检查用户名及密码!');
         } else {
           response.json().then((data) => {
-            let username = data.user.username;
-            let userId = data.user.id;
-            let permissions = data.permissions.permissions;
+            const username = data.user.username;
+            const userId = data.user.id;
+            const permissions = data.permissions.permissions;
+            const token = response.headers.get('X-Okapi-Token');
+
             sessionStorage.setItem("username", username);
             sessionStorage.setItem("userId", userId);
-            const token = response.headers.get('X-Okapi-Token');
             sessionStorage.setItem("isLogin", true);
             sessionStorage.setItem("token", token);
             sessionStorage.setItem("permissions", permissions);
@@ -70,10 +67,10 @@ class Login extends Component {
   }
 
   getUUid(userId, token) {
-    fetch(`${SERVER_CONF.SERVICE_BASE}/authn/credentials?query=userId=${userId}`, {
+    fetch(`${conf.serverBase}/authn/credentials?query=userId=${userId}`, {
       method: 'GET',
       headers: {
-        'X-Okapi-Tenant': SERVER_CONF.tenant,
+        'X-Okapi-Tenant': conf.tenant,
         'Content-type': "application/json",
         'x-okapi-token': token
       }
@@ -131,5 +128,4 @@ class Login extends Component {
   }
 };
 
-ReactDOM.render(
-  <Login/>, document.getElementById("root"));
+ReactDOM.render(<Login/>, document.getElementById("root"));

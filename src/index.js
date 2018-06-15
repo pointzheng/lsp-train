@@ -16,7 +16,7 @@ require('./plugins/waves/waves');
 require('./styles/waves-cov.css');
 require('animate.css/animate.css');
 require('./styles/index-style.css');
-import { menuConfig , menuTitleConfig } from "./config/index-menu.js";
+import { menuConfig , menuTitleConfig } from "./config/menu-config.js";
 import util from './util/util.js';
 
 
@@ -68,7 +68,7 @@ function changeHtml (m,a) {
   let titleHtml = `<li><a class="J_menuItem menu-title">${menuTitleConfig[a]}</a></li>`;
   menuHtml = titleHtml + menuHtml;
   $(".sidebar-menu").eq(a).html(menuHtml);
-  
+
 }
 
 
