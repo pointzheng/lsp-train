@@ -10,7 +10,7 @@ export const menuConfig = [{
   "big-data-analysis": [{
     menuName: "框架培训",
     menuList: [{
-      name: "Article管理",
+      name: "文章管理",
       url: "./pages/article.html"
     }/*, {
       name: "租客映射模板管理",

@@ -90,7 +90,7 @@ class ArticleManagement extends Component {
           this.state.isEdit
           ?
           <Modal
-            title={this.state.id == null ? "增加书目" : "编辑书目"}
+            title={this.state.id == null ? "增加文章" : "编辑文章"}
             width={720}
             visible={true}
             maskClosable={false}
