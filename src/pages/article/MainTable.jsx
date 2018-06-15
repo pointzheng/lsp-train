@@ -126,7 +126,35 @@ export default class MainTable extends React.Component {
     }, this.handleSearch);
   }
 
+  /**
+   * 工具函数：形如"20180614162641702"的日期格式转换为"yyyy-MM-dd hh:ss:mm"
+   * @param  {[type]} dateStr
+   * @return {[type]}
+   */
+  handleDate(dateStr) {
+    let year, month, day, hour, minute, second, rt;
+
+    console.log("需要转换的时间字符串:" + dateStr);
+    if (dateStr === undefined || dateStr === '') {
+      return "";
+    }
+    try {
+      year = dateStr.substring(0, 4);
+      month = dateStr.substring(4, 6);
+      day = dateStr.substring(6, 8);
+      hour = dateStr.substring(8, 10);
+      minute = dateStr.substring(10, 12);
+      second = dateStr.substring(12, 14);
+    } catch (ex) {
+        console.error("处理时间错误!");
+        return "";
+    }
+
+    return `${year}-${month}-${day} ${hour}:${minute}:${second}`
+  }
+
   render() {
+    const thisCt = this;
     const columns = [{
       title: '标题',
       dataIndex: 'article_title',
@@ -142,7 +170,8 @@ export default class MainTable extends React.Component {
     }, {
       title: '创建日期',
       dataIndex: 'create_time',
-      key: 'create_time'
+      key: 'create_time',
+      render: (text, record, index) => thisCt.handleDate(text)
     }, {
       title: '创建者',
       dataIndex: 'creator',
