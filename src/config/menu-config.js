@@ -8,7 +8,7 @@ export const menuConfig = [{
   }]
 }, {
   "big-data-analysis": [{
-    menuName: "框架培训",
+    menuName: "前端培训",
     menuList: [{
       name: "文章管理",
       url: "./pages/article.html"
