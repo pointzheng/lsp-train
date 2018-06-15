@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Modal, Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, Radio } from 'antd';
 import MappingTable from './MappingTable.jsx';
-import {method2Code} from '../../config/sysConfig.js';
 import util from '../../util/util.js';
 
 const FormItem = Form.Item;

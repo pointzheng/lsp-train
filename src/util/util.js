@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Select } from 'antd';
 import 'whatwg-fetch';
-import {confProd} from '../config/sysConfig.js';
+import {confProd} from '../config/sys-config.js';
 
 const Option = Select.Option;
 const method2Code = {
